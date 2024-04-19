@@ -12,9 +12,9 @@ function getRandomCard() {
   if (randomNumber > 10) {
       return 10
   } else if (randomNumber === 1) {
-    return 11
+      return 11
   } else {
-    return randomNumber
+      return randomNumber
   }
 }
 
@@ -47,8 +47,10 @@ function renderGame() {
 }
 
 function newCard() {
-  let card = getRandomCard()
-  sum += card
-  cards.push(card)
-  renderGame()
+  if (isAlive === true && hasBlackJack === false) {
+    let card = getRandomCard()
+    sum += card
+    cards.push(card)
+    renderGame()
+  }
 }
